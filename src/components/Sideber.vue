@@ -137,8 +137,8 @@ defineExpose({
         <l-button @click="isOpenFolderModal = !isOpenFolderModal">
           新建文件夹
         </l-button>
-        <a href="/#/setting"> <l-button> 设置 </l-button></a>
-        <a href="/#/about"> <l-button> 关于 </l-button></a>
+        <a href="/PicBox/#/setting"> <l-button> 设置 </l-button></a>
+        <a href="/PicBox/#/about"> <l-button> 关于 </l-button></a>
       </div>
     </div>
     <image-modal
