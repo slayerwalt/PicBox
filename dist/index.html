@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="https://github.com/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    <title>PicBox</title>
+  <script type="module" crossorigin src="/PicBox/assets/index.8895f60d.js"></script>
+  <link rel="modulepreload" href="/PicBox/assets/vendor.624dd54d.js">
+  <link rel="stylesheet" href="/PicBox/assets/index.cb12a366.css">
+</head>
+
+<body>
+    <style>
+        .github-corner {
+            position: fixed;
+            z-index: 99;
+            top: 0;
+            right: 0;
+            transform: scale(0.5);
+            opacity: 0.1;
+            transition: all 0.25s;
+        }
+        .github-corner:hover {
+            opacity: 1;
+        }
+        .github-corner:hover .octo-arm {
+            animation: octocat-wave 560ms ease-in-out
+        }
+        @keyframes octocat-wave {
+            0%,
+            100% {
+                transform: rotate(0)
+            }
+            20%,
+            60% {
+                transform: rotate(-25deg)
+            }
+            40%,
+            80% {
+                transform: rotate(10deg)
+            }
+        }
+        @media (max-width:500px) {
+            .github-corner:hover .octo-arm {
+                animation: none
+            }
+            .github-corner .octo-arm {
+                animation: octocat-wave 560ms ease-in-out
+            }
+        }
+    </style>
+    <div id="app"></div>
+    
+</body>
+<script>
+    Fancybox.bind('[data-fancybox="gallery"]', {
+        dragToClose: false,
+        Toolbar: false,
+        closeButton: "top",
+        Image: {},
+        on: {
+            initCarousel: (fancybox) => {
+                const slide = fancybox.Carousel.slides[fancybox.Carousel.page];
+                fancybox.$container.style.setProperty(
+                    "--bg-image",
+                    `url("${slide.$thumb.src}")`
+                );
+            },
+            "Carousel.change": (fancybox, carousel, to, from) => {
+                const slide = carousel.slides[to];
+                fancybox.$container.style.setProperty(
+                    "--bg-image",
+                    `url("${slide.$thumb.src}")`
+                );
+            },
+        },
+    });
+</script>
+
+</html>
