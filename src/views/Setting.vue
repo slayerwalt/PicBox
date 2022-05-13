@@ -65,9 +65,9 @@ const GetRepos = () => {
       loading_1.value = false
       if (
         !user.value.repoId &&
-        token.value == 'ghp_nHrGvW63OTlLac' + '' + 'FH4WOHto6sYhS7yD1Us6Ta'
+        token.value == ' '
       ) {
-        user.value.repoId = 480610843
+        user.value.repoId = 1
         Save()
       }
     })
@@ -145,18 +145,6 @@ const Exit = () => {
       :loading="loading_1"
     >
       确定
-    </l-button>
-    <l-button
-      type="gray"
-      v-show="repos.length == 0"
-      @click="
-        ;((loading_4 = true),
-        (token = 'ghp_9ySBiULlIUWm7p' + '' + 'l5GOHmN3oNVmTbqR2reQ6U')),
-          SetToken()
-      "
-      :loading="loading_4"
-    >
-      使用测试仓库（Demo）
     </l-button>
     <l-button
       type="primary"
